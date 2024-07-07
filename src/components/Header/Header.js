@@ -9,7 +9,7 @@ const Header = () => {
         <Navbar bg="light" expand="lg">
             <Container>
                 {/* <Navbar.Brand href="#home">Hỏi Dân IT</Navbar.Brand> */}
-                <NavLink to='/' className='navbar-brand'>Hỏi Dân IT</NavLink>
+                <NavLink to='/' className='navbar-brand'> Hỏi Dân IT</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -23,14 +23,14 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
-                        <NavDropdown title="Settings" id="basic-nav-dropdown">
-                            <NavDropdown.Item >Log in</NavDropdown.Item>
-                            <NavDropdown.Item >
-                                Log out
-                            </NavDropdown.Item>
-                            <NavDropdown.Item >Profile</NavDropdown.Item>
+                        <button className='btn-login'>Log in</button>
+                        <button className='btn-signup'>Sign up</button>
 
-                        </NavDropdown>
+                        {/* <NavDropdown title="Settings" id="basic-nav-dropdown">
+                            <NavDropdown.Item >Log in</NavDropdown.Item>
+                            <NavDropdown.Item >Log out</NavDropdown.Item>
+                            <NavDropdown.Item >Profile</NavDropdown.Item>
+                        </NavDropdown> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
