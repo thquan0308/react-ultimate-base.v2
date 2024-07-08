@@ -1,5 +1,5 @@
 import ModalCreateUser from "./ModalCreateUser"
-
+import './ManageUser.scss'
 
 const ManageUser = (props) => {
     return (
@@ -9,11 +9,14 @@ const ManageUser = (props) => {
             </div>
 
             <div className="users-content">
-                <button>Add new users</button>
-            </div>
+                <div>
+                    <button>Add new users</button>
+                </div>
 
-            <div>
-                table users
+                <div>
+                    table users
+                </div>
+
                 <ModalCreateUser />
             </div>
         </div>
