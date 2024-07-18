@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FcPlus } from "react-icons/fc";
 import { toast } from 'react-toastify';
-import { postCreateNewUser } from '../../../services/apiService';
+import { putUpdateUser } from '../../../services/apiService';
 import _ from 'lodash'
 const ModalUpdateUser = (props) => {
     const { show, setShow, dataUpdate } = props
@@ -15,6 +15,7 @@ const ModalUpdateUser = (props) => {
         setRole("USER")
         setImage("")
         setPreviewImage("")
+        props.resetUpdateDate()
     };
 
     const [email, setEmail] = useState("")
@@ -25,7 +26,6 @@ const ModalUpdateUser = (props) => {
     const [previewImage, setPreviewImage] = useState("")
 
     useEffect(() => {
-        console.log('run useeffect', dataUpdate)
         if (!_.isEmpty(dataUpdate)) {
             //update state
             setEmail(dataUpdate.email)
@@ -54,26 +54,18 @@ const ModalUpdateUser = (props) => {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
     };
-    console.log('check render: dataupdate', dataUpdate)
+
 
     const handSubmitCreateUser = async () => {
-        //validate
-        // const isValidEmail = validateEmail(email)
-        // if (!isValidEmail) {
-        //     toast.error('invalid email')
-        //     // toast.success('test success')
-        //     // toast.info('test information')
-        //     return
-        // }
-
-        if (!password) {
-            toast.error('invalid password')
+        // validate
+        const isValidEmail = validateEmail(email)
+        if (!isValidEmail) {
+            toast.error('invalid email')
             return
         }
 
-        let data = await postCreateNewUser(email, password, username, role, image)
+        let data = await putUpdateUser(dataUpdate.id, username, role, image)
 
-        console.log("conponent res: ", data)
         if (data && data.EC === 0) {
             toast.success(data.EM)
             handleClose()
@@ -84,6 +76,7 @@ const ModalUpdateUser = (props) => {
         }
 
     }
+    console.log('check render: dataupdate', dataUpdate)
 
     return (
         <>

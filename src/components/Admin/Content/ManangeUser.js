@@ -31,6 +31,10 @@ const ManageUser = (props) => {
         setDataUpdate(user)
     }
 
+    const resetUpdateDate = () => {
+        setDataUpdate({})
+    }
+
     return (
         <div className="manage-user-container">
             <div className="title">
@@ -60,6 +64,8 @@ const ManageUser = (props) => {
                     show={showModelUpdateUser}
                     setShow={setShowModelUpdateUser}
                     dataUpdate={dataUpdate}
+                    fetchListUsers={fetchListUsers}
+                    resetUpdateDate={resetUpdateDate}
                 />
 
             </div>
