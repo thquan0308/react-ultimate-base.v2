@@ -29,6 +29,11 @@ body {
       padding      : 0 15px;
       border       : 1px solid #535353;
       height       : 40px;
+
+      &:hover {
+        background: rgb(185, 230, 236);
+
+      }
     }
 
     .btn-signup {
@@ -39,7 +44,7 @@ body {
       height       : 40px;
 
       &:hover {
-        background: brown;
+        background: rgb(104, 30, 30);
       }
     }
 
