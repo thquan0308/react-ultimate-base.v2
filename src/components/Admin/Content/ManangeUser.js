@@ -10,7 +10,7 @@ import ModalDeleteUser from "./ModalDeleteUser";
 import TableUserPaginate from "./TableUserPaginate";
 
 const ManageUser = (props) => {
-    const LIMIT_USER = 3
+    const LIMIT_USER = 6
 
     const [pageCount, setPageCount] = useState(0)
 
