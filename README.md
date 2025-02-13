@@ -1,6 +1,7 @@
 #Node.js v14.17.0
 
 ![Giao diện trang chủ](src/assets/bg2.jpg)
+(src/assets/bg2.jpg)
 
 # Getting Started with Create React App
 
