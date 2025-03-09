@@ -5,7 +5,8 @@ import { BsFillPatchPlusFill, BsFillPatchMinusFill } from 'react-icons/bs'
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
 import { RiImageAddFill } from 'react-icons/ri'
 import { v4 as uuidv4 } from 'uuid'
-import _ from 'lodash'
+import _, { set } from 'lodash'
+import Lightbox from 'react-awesome-lightbox'
 
 
 const Questions = (props) => {
@@ -33,6 +34,13 @@ const Questions = (props) => {
             },
         ]
     )
+
+    const [isPreviewImage, setIsPreviewImage] = useState(false)
+
+    const [dataImagePreview, setDataImagePreview] = useState({
+        title: '',
+        url: ''
+    })
 
     const handleAddRemoveQuesion = (type, id) => {
         if (type === 'ADD') {
@@ -110,7 +118,6 @@ const Questions = (props) => {
 
     const handleAnswerQuestion = (type, answerId, questionId, value) => {
         let questionsClone = _.cloneDeep(questions)
-
         let index = questionsClone.findIndex(item => item.id === questionId)
         if (index > -1) {
             questionsClone[index].answers =
@@ -136,6 +143,18 @@ const Questions = (props) => {
 
     }
 
+    const handlePreviewImage = (questionId) => {
+        let questionsClone = _.cloneDeep(questions)
+        let index = questionsClone.findIndex(item => item.id === questionId)
+
+        if (index > -1) {
+            setDataImagePreview({
+                url: URL.createObjectURL(questionsClone[index].imageFile),
+                title: questionsClone[index].imageName
+            })
+            setIsPreviewImage(true)
+        }
+    }
 
     return (
         <div className="question-container">
@@ -143,7 +162,6 @@ const Questions = (props) => {
                 Manage Questions
             </div>
             <hr />
-
             <div className="add-new-question">
                 <div className="col-6 form-group">
                     <label className="mb-2">Select Quiz</label>
@@ -182,7 +200,16 @@ const Questions = (props) => {
                                             hidden
                                             onChange={(event) => handleOnChangeFileQuestion(question.id, event)}
                                         />
-                                        <span>{question.imageName ? question.imageName : '0 file is uploaded'}</span>
+                                        <span>{question.imageName ?
+                                            <span
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={() => handlePreviewImage(question.id)}
+                                            >
+                                                {question.imageName}
+                                            </span>
+                                            :
+                                            '0 file is uploaded'
+                                        }</span>
                                     </div>
                                     <div className="btn-add">
                                         <span onClick={() => handleAddRemoveQuesion('ADD', '')}>
@@ -233,7 +260,9 @@ const Questions = (props) => {
                                                 </div>
                                             </div>
                                         )
-                                    })}
+                                    })
+                                }
+
                             </div>
                         )
                     })}
@@ -246,6 +275,15 @@ const Questions = (props) => {
                             onClick={() => handleSubmitQuestionForQuiz()}
                             className="btn btn-warning">Save Questions</button>
                     </div>
+                }
+
+                {
+                    isPreviewImage === true &&
+                    <Lightbox
+                        image={dataImagePreview.url}
+                        title={dataImagePreview.title}
+                        onClose={() => setIsPreviewImage(false)}
+                    ></Lightbox>
                 }
             </div>
         </div >
