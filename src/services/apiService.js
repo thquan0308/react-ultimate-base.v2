@@ -15,15 +15,7 @@ const getAllUsers = () => {
     return axios.get('api/v1/participant/all')
 }
 
-const putUpdateUser = (id, username, role, image) => {
-    //submit data
-    const data = new FormData();
-    data.append('id', id);
-    data.append('username', username);
-    data.append('role', role);
-    data.append('userImage', image);
-    return axios.put('api/v1/participant', data)
-}
+
 
 const deleteUser = (userId) => {
     return axios.delete('api/v1/participant', { data: { id: userId } })
@@ -52,12 +44,60 @@ const getQuizByUser = () => {
 }
 
 const getDataQuiz = (id) => {
-    // console.log('Quiz ID:', id);
     return axios.get(`/api/v1/questions-by-quiz?quizId=${id}`);
 }
+
+const postSubmitQuiz = (data) => {
+    return axios.post('/api/v1/quiz-submit', { ...data })
+}
+
+const postCreateNewQuiz = (description, name, difficulty, image) => {
+    const data = new FormData();
+    data.append('description', description);
+    data.append('name', name);
+    data.append('difficulty', difficulty);
+    data.append('quizImage', image);
+    return axios.post('api/v1/quiz', data)
+}
+
+const getAllQuizForAdmin = () => {
+    return axios.get(`/api/v1/quiz/all`);
+}
+
+const deleteQuizForAdmin = (id) => {
+    return axios.delete(`api/v1/quiz/${id}`)
+}
+
+const putUpdateUser = (id, username, role, image) => {
+    //submit data
+    const data = new FormData();
+    data.append('id', id);
+    data.append('username', username);
+    data.append('role', role);
+    data.append('userImage', image);
+    return axios.put('api/v1/participant', data)
+}
+
+const putUpdateQuizForAdmin = async (id, name, description, difficulty, image) => {
+    const data = new FormData();
+    data.append('id', id);
+    data.append('name', name);
+    data.append('description', description);
+    data.append('difficulty', difficulty);
+
+    data.append('quizImage', image); // Chỉ gửi nếu có hình ảnh
+
+    console.log([...data.entries()]);
+
+    return axios.put('api/v1/quiz', data);
+};
+
 
 export {
     postCreateNewUser, getAllUsers, putUpdateUser,
     deleteUser, getUserWithPaginate, postLogin,
-    postRegister, getQuizByUser, getDataQuiz
+    postRegister, getQuizByUser, getDataQuiz,
+    postSubmitQuiz, postCreateNewQuiz, getAllQuizForAdmin,
+    deleteQuizForAdmin, putUpdateQuizForAdmin
+
 }
