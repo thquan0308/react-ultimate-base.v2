@@ -6,6 +6,8 @@ import './DetailQuiz.scss'
 import Quesion from "./Question"
 import { Modal } from "bootstrap"
 import ModalResult from "./ModalResult"
+import RightContent from "./Content/RightContent"
+
 
 const DetailQuiz = (props) => {
     const params = useParams()
@@ -79,7 +81,7 @@ const DetailQuiz = (props) => {
         }
     }
 
-    const handleFinish = async () => {
+    const handleFinishQuiz = async () => {
         // console.log('finish: ', dataQuiz)
         let payload = {
             quizId: +quizId,
@@ -153,14 +155,18 @@ const DetailQuiz = (props) => {
                     >Next
                     </button>
                     <button className="btn btn-warning"
-                        onClick={() => handleFinish()}
+                        onClick={() => handleFinishQuiz()}
                     >Finish
                     </button>
 
                 </div>
             </div>
             <div className="right-content">
-                Count down
+                <RightContent
+                    dataQuiz={dataQuiz}
+                    handleFinishQuiz={handleFinishQuiz}
+                    setIndex={setIndex}
+                />
             </div>
             <ModalResult
                 show={isShowModalResult}

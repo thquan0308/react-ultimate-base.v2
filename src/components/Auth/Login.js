@@ -55,6 +55,12 @@ const Login = (props) => {
         }
     }
 
+    const handleKeyDown = (event) => {
+        if (event && event.key === 'Enter') {
+            handleLogin()
+        }
+    }
+
     return (
         <div className="login-container">
             <div className='header'>
@@ -77,6 +83,7 @@ const Login = (props) => {
                         className='form-control'
                         value={email}
                         onChange={(event) => { setEmail(event.target.value) }}
+                        onKeyDown={(event) => handleKeyDown(event)}
                     />
                 </div>
 
@@ -86,6 +93,7 @@ const Login = (props) => {
                         className='form-control'
                         value={password}
                         onChange={(event) => { setPassword(event.target.value) }}
+                        onKeyDown={(event) => handleKeyDown(event)}
                     />
                 </div>
 
@@ -112,6 +120,7 @@ const Login = (props) => {
 
                 </div>
             </div>
+
         </div>
     )
 }
