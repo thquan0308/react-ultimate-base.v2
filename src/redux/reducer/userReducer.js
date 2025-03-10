@@ -42,6 +42,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 },
                 isAuthenticated: false
             };
+
         default: return state;
     }
 };

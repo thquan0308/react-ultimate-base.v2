@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.languages {
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+}
+
 @media (min-width: 1400px) {
 
   .container,
@@ -109,6 +115,5 @@ body {
 video {
   position: fixed;
   bottom  : 0;
-
-  width: 100vw;
+  width   : 100vw;
 }
