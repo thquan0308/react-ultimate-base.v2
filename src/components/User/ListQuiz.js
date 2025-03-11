@@ -16,6 +16,8 @@ const ListQuiz = () => {
             setArrQuiz(res.DT)
         }
     }
+    console.log("arrQuiz:", arrQuiz);
+
     return (
         <div className="list-quiz-container container">
             {arrQuiz && arrQuiz.length > 0 &&

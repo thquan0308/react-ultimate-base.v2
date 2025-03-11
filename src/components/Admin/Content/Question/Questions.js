@@ -226,7 +226,7 @@ const Questions = (props) => {
         }
     }
 
-    console.log(questions)
+
     return (
         <div className="question-container">
             <div className="title">

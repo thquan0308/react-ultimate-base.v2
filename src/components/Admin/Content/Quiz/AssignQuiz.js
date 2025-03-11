@@ -42,13 +42,22 @@ const AssignQuiz = (props) => {
     }
 
     const handleAssign = async () => {
-        let rs = await postAssignQuiz(selectedQuiz.value, selectedUser.value)
+        console.log("Sending request with:", {
+            quizId: selectedQuiz.value,
+            userId: selectedUser.value
+        });
+
+        let rs = await postAssignQuiz(selectedQuiz.value, selectedUser.value);
+
+        console.log("Response received:", rs);
+
         if (rs && rs.EC === 0) {
-            toast.success(rs.EM)
+            toast.success(rs.EM);
         } else {
-            toast.error(rs.EM)
+            toast.error(rs.EM);
         }
-    }
+    };
+
 
     return (
         <div className="assign-quiz-container row">

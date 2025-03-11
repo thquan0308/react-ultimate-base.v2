@@ -85,7 +85,7 @@ const putUpdateQuizForAdmin = async (id, name, description, difficulty, image) =
 
     data.append('quizImage', image); // Chỉ gửi nếu có hình ảnh
 
-    console.log([...data.entries()]);
+    // console.log([...data.entries()]);
 
     return axios.put('api/v1/quiz', data);
 };
@@ -126,6 +126,10 @@ const getOverview = () => {
     return axios.get('api/v1/overview')
 }
 
+const getHistory = () => {
+    return axios.get('api/v1/history')
+}
+
 export {
     postCreateNewUser, getAllUsers, putUpdateUser,
     deleteUser, getUserWithPaginate, postLogin,
@@ -135,6 +139,6 @@ export {
     postCreateNewQuestionForQuiz, postCreateNewAnswerForQuestion,
     postAssignQuiz, getQuizWithQA,
     postUpsertQA, logout,
-    getOverview
+    getOverview, getHistory
 
 }

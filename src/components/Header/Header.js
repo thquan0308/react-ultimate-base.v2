@@ -9,12 +9,16 @@ import { toast } from 'react-toastify';
 import { doLogout } from '../../redux/action/userAction';
 import Language from './Language';
 import UserInfor from './UserInfor';
+import History from './History';
 import { useState } from 'react';
 
 const Header = () => {
     const isAuthenticated = useSelector(state => state.user.isAuthenticated)
     const account = useSelector(state => state.user.account)
     const [showUserInfor, setShowUserInfor] = useState(false);
+    const [showUserHistory, setShowUserHistory] = useState(false);
+
+
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -65,7 +69,7 @@ const Header = () => {
                                 :
                                 <NavDropdown title="Settings" id="basic-nav-dropdown">
                                     <NavDropdown.Item onClick={() => setShowUserInfor(true)}>Profile</NavDropdown.Item>
-
+                                    <NavDropdown.Item onClick={() => setShowUserHistory(true)}>Histoy</NavDropdown.Item>
                                     <NavDropdown.Item
                                         onClick={() => handleLogout()}
                                     >Log out</NavDropdown.Item>
@@ -79,6 +83,7 @@ const Header = () => {
                 </Container>
             </Navbar>
             <UserInfor show={showUserInfor} handleClose={() => setShowUserInfor(false)} />
+            <History show={showUserHistory} handleClose={() => setShowUserHistory(false)} />
         </>
     );
 }

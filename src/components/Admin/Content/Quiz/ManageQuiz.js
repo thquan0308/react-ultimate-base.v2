@@ -129,7 +129,7 @@ const ManageQuiz = (props) => {
                             </fieldset>
                         </div >
                         <div className="list-detail">
-                            {/* <TableQuiz listQuiz={listQuiz} fetchQuiz={fetchQuiz} /> */}
+                            <TableQuiz listQuiz={listQuiz} fetchQuiz={fetchQuiz} />
                             <TableQuiz />
                         </div>
                     </Accordion.Body>

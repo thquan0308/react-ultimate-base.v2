@@ -79,7 +79,6 @@ const ModalUpdateUser = (props) => {
         }
 
     }
-    // console.log('check dataupdate: ', props.dataUpdate)
 
     return (
         <>
