@@ -4,6 +4,20 @@
         "title2": "Bạn không muốn tạo một biểu mẫu nhàm chán.",
         "title3": {
             "login": "Bắt đầu ngay. Hoàn toàn miễn phí."
-        }
+        },
+        "doing": "Làm kiểm tra ngay !"
+    },
+    "header": {
+        "home": "Trang chủ",
+        "users": "Người dùng",
+        "admin": "Trang quản trị",
+        "login": "Đăng nhập",
+        "signup": "Đăng ký",
+        "logout": "Đăng xuất",
+        "profile": "Thông tin",
+        "history": "Lịch sử",
+        "setting": "Tuỳ chọn",
+        "quiz": "Câu hỏi",
+        "user": "User"
     }
 }

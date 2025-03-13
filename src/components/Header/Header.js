@@ -11,13 +11,14 @@ import Language from './Language';
 import UserInfor from './UserInfor';
 import History from './History';
 import { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next'
 
 const Header = () => {
     const isAuthenticated = useSelector(state => state.user.isAuthenticated)
     const account = useSelector(state => state.user.account)
     const [showUserInfor, setShowUserInfor] = useState(false);
     const [showUserHistory, setShowUserHistory] = useState(false);
-
+    const { t } = useTranslation()
 
     const dispatch = useDispatch();
 
@@ -51,9 +52,9 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink to='/' className='nav-link'>Home</NavLink>
-                            <NavLink to='/users' className='nav-link'>Users</NavLink>
-                            <NavLink to='/admins' className='nav-link'>Admin</NavLink>
+                            <NavLink to='/' className='nav-link'>{t('header.home')}</NavLink>
+                            <NavLink to='/users' className='nav-link'>{t('header.users')}</NavLink>
+                            <NavLink to='/admins' className='nav-link'>{t('header.admin')}</NavLink>
 
                             {/* <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/users">Users</Nav.Link>
@@ -63,16 +64,16 @@ const Header = () => {
                         <Nav>
                             {isAuthenticated === false ?
                                 <>
-                                    <button className='btn-login' onClick={() => handleLogin()}>Log in</button>
-                                    <button className='btn-signup' onClick={() => handleRegister()}>Sign up</button>
+                                    <button className='btn-login' onClick={() => handleLogin()}>{t('header.login')}</button>
+                                    <button className='btn-signup' onClick={() => handleRegister()}>{t('header.signup')}</button>
                                 </>
                                 :
-                                <NavDropdown title="Settings" id="basic-nav-dropdown">
-                                    <NavDropdown.Item onClick={() => setShowUserInfor(true)}>Profile</NavDropdown.Item>
-                                    <NavDropdown.Item onClick={() => setShowUserHistory(true)}>Histoy</NavDropdown.Item>
+                                <NavDropdown title={t('header.setting')} id="basic-nav-dropdown">
+                                    <NavDropdown.Item onClick={() => setShowUserInfor(true)}>{t('header.profile')}</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => setShowUserHistory(true)}>{t('header.history')}</NavDropdown.Item>
                                     <NavDropdown.Item
                                         onClick={() => handleLogout()}
-                                    >Log out</NavDropdown.Item>
+                                    >{t('header.logout')}</NavDropdown.Item>
                                 </NavDropdown>
                             }
 

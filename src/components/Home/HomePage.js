@@ -31,7 +31,7 @@ const HomePage = (props) => {
                             {t('homepage.title3.login')}
                         </button>
                         :
-                        <button onClick={() => navigate('/users')}>Doing Quiz Now
+                        <button onClick={() => navigate('/users')}> {t('homepage.doing')}
                         </button>
                     }
                 </div>

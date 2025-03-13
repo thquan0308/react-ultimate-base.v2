@@ -4,6 +4,20 @@
         "title2": "You don't want to make a boring form.",
         "title3": {
             "login": "Get's started. It's free."
-        }
+        },
+        "doing": "Doing Quiz Now !"
+    },
+    "header": {
+        "home": "Home",
+        "users": "Users",
+        "admin": "Admin",
+        "login": "Login",
+        "signup": "Register",
+        "logout": "Logout",
+        "profile": "Profile",
+        "history": "History",
+        "setting": "Settings",
+        "quiz": "Quiz",
+        "user": "User"
     }
 }
