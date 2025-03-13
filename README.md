@@ -32,10 +32,10 @@ Website được xây dựng trên nền tảng ReactJS và NodeJS trong môi tr
 
 -   Giao diện trang chủ
 
-![Giao diện trang chủ](src/assets/1.png)
-![Giao diện trang trắc nghiệm](src/assets/2.png)
-![Giao diện trang quản lý câu hỏi của quản trị viên](src/assets/3.png)
-![Giao diện quản lý thông tin của quản trị viên](src/assets/4.png)
+![Giao diện trang chủ](src/assets/1.PNG)
+![Giao diện trang trắc nghiệm](src/assets/2.PNG)
+![Giao diện trang quản lý câu hỏi của quản trị viên](src/assets/3.PNG)
+![Giao diện quản lý thông tin của quản trị viên](src/assets/4.PNG)
 
 ### Link dự án
 
