@@ -1,75 +1,52 @@
-#Node.js v14.17.0
+# WEBSITE HỖ TRỢ QUẢN LÝ VÀ ĐẶT LỊCH CHO CÁC PHÒNG KHÁM
 
-![Giao diện trang chủ](src/assets/bg2.jpg)
-(src/assets/bg2.jpg)
+### Các công nghệ sử dụng:
 
-# Getting Started with Create React App
+ReactJS, Node.js, Express.js, MongoDB, Boostrap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Môi trường cài đặt và công nghệ sử dụng:
 
-## Available Scripts
+Website được xây dựng trên nền tảng ReactJS và NodeJS trong môi trường phần mềm Visual Studio Code. Các công nghệ sử dụng bao gồm:
 
-In the project directory, you can run:
+-   Frontend:
 
-### `npm start`
+-   ReactJS: Sử dụng cả React Hooks và React Class Components để xây dựng giao diện người dùng. ReactJS giúp xây dựng các giao diện động và dễ dàng quản lý trạng thái.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   Material-UI: Thư viện giao diện người dùng giúp xây dựng các thành phần đẹp mắt và dễ sử dụng với thiết kế hiện đại.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   HTML, SCSS, Javascript: SCSS được sử dụng để viết mã CSS một cách có cấu trúc và dễ bảo trì, trong khi JavaScript được dùng cho các logic xử lý trên client-side.
 
-### `npm test`
+### Về tính năng của hệ thống:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Đăng ký và quản lý tài khoản: Người dùng có thể đăng ký, cập nhật thông tin, đổi mật khẩu và khôi phục mật khẩu qua email. Quản trị viên có thể quản lý tài khoản (thêm, sửa, xóa, khóa/mở khóa).
 
-### `npm run build`
+-   Quản lý bài kiểm tra: Người dùng có thể xem danh sách các bài kiểm tra, chọn bài kiểm tra theo chủ đề hoặc độ khó, và thực hiện bài kiểm tra trực tuyến.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Kết quả và đánh giá: Sau khi hoàn thành bài kiểm tra, hệ thống sẽ hiển thị kết quả chi tiết, bao gồm điểm số, câu trả lời đúng/sai, và giải thích cho từng câu hỏi.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   Quản lý câu hỏi và bài kiểm tra: Quản trị viên có thể thêm, sửa, xóa câu hỏi và bài kiểm tra. Hệ thống hỗ trợ phân loại câu hỏi theo chủ đề và độ khó.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Phân quyền người dùng: Quản trị viên có toàn quyền quản lý hệ thống, trong khi người dùng thông thường chỉ có thể thực hiện bài kiểm tra và xem kết quả.
 
-### `npm run eject`
+### GIAO DIỆN WEBSITE
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   Giao diện trang chủ
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Giao diện trang chủ](src/assets/1.png)
+![Giao diện trang trắc nghiệm](src/assets/2.png)
+![Giao diện trang quản lý câu hỏi của quản trị viên](src/assets/3.png)
+![Giao diện quản lý thông tin của quản trị viên](src/assets/4.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Link dự án
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Link FE: https://github.com/thquan0308/OnlineQuiz
 
-## Learn More
+### Các bước cài đặt:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Cài đặt ứng dụng ReactJS: Gõ lệnh
+   npm install
+   npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Các phiên bản sử dụng
+   Node version v22.11.0
+   Npm version 10.9.0
