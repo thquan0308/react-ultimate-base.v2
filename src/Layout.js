@@ -24,7 +24,7 @@ import { Suspense } from "react";
 const Notfound = () => {
     return (
         <div className="container mt-3 alert alert-danger">
-            404. Not found data with your current URL
+            404. Not found data with your current URL.
         </div>
     )
 }

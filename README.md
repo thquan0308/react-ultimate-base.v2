@@ -1,4 +1,4 @@
-# WEBSITE HỖ TRỢ QUẢN LÝ VÀ ĐẶT LỊCH CHO CÁC PHÒNG KHÁM
+# WEBSITE QUIZ ONLINE
 
 ### Các công nghệ sử dụng:
 
