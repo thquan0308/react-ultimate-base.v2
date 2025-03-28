@@ -2,7 +2,14 @@
 
 ### Các công nghệ sử dụng:
 
-ReactJS, Node.js, Express.js, MongoDB, Boostrap
+-   Front-end
+    -   Core: React
+    -   Routing: React Router
+    -   State: Redux
+    -   UI: Bootstrap
+    -   API: Axios
+    -   Style: Sass
+    -   i18n: React i18next
 
 ### Môi trường cài đặt và công nghệ sử dụng:
 
